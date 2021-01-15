@@ -16,7 +16,7 @@ class WebRequests {
     static var backServerIP:String = http + "192.168.8.6:5000/beer/v1/beer/"
     static var backServerPicturesPath:String = backServerIP + "fotos/"
     
-    static func updateBeers(completion: @escaping ([Beer]) -> Void) {
+    static func getBeers(completion: @escaping ([Beer]) -> Void) {
          // Con la intención de hacer asíncronos ambos miembros, pero esperar a su ejecución completa para llamar al callback, se inician dispatgroups.
         let taskGroup = DispatchGroup()
         taskGroup.enter()
@@ -44,9 +44,43 @@ class WebRequests {
         taskGroup.notify(queue: .main) {
             completion(beerCollection)
         }
-
     }
     
+    static func deleteBeer(beer: Beer, completion: @escaping (_ success: Bool) -> Void) {
+        let url = backServerIP + "info"
+                
+        Alamofire.request(url, method: .delete, parameters: ["id": beer.id], encoding: JSONEncoding.default).response { (response) in
+            let codeError = response.response?.statusCode
+            print(codeError)
+            
+            completion(codeError == 200 || codeError == 404)
+        }
+    }
+    
+    static func editBeer(beer: Beer, completion: @escaping (_ success: Bool) -> Void) {
+        let url = backServerIP + "info"
+                
+        Alamofire.request(url, method: .patch, parameters: beer.toJSON(), encoding: JSONEncoding.default).response { (response) in
+            let codeError = response.response?.statusCode
+            print(codeError)
+            
+            completion(codeError == 200 || codeError == 404)
+        }
+    }
+    
+    static func newBeer(beer: Beer, completion: @escaping (_ success: Bool) -> Void) {
+        let url = backServerIP + "info"
+                
+        Alamofire.request(url, method: .post, parameters: beer.toJSON(), encoding: JSONEncoding.default).response { (response) in
+            let codeError = response.response?.statusCode
+            print(codeError)
+            
+            completion(codeError == 200 || codeError == 404)
+        }
+    }
+    
+    
+    // MARK: Private internal methods.
     private static func updateBeers(completion: @escaping ([Beer]) -> Void, fail: @escaping (_ error: String) -> Void) {
         let url = backServerIP + "all"
         
@@ -85,17 +119,6 @@ class WebRequests {
                 beers.forEach({$0.imagePath = cotiPicturesPath + $0.imagePath})
                 
                 completion(beers)
-            } catch let DecodingError.dataCorrupted(context) {
-                print(context)
-            } catch let DecodingError.keyNotFound(key, context) {
-                print("Key '\(key)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-            } catch let DecodingError.valueNotFound(value, context) {
-                print("Value '\(value)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-            } catch let DecodingError.typeMismatch(type, context)  {
-                print("Type '\(type)' mismatch:", context.debugDescription)
-                print("codingPath:", context.codingPath)
             } catch {
                 print("error: ", error)
             }

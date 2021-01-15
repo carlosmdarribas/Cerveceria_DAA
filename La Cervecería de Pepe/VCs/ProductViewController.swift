@@ -49,7 +49,10 @@ class ProductViewController: UIViewController {
     }
     
     @IBAction func removeBeer(_ sender: Any) {
-        
+        WebRequests.deleteBeer(beer: self.beer) { (success) in
+            // TODO: Poner alerta.
+            // TODO: Poner notificación.
+        }
     }
     
     // MARK: - Navigation

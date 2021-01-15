@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             self.beers += gotBeers
         }
         
-        WebRequests.updateBeers { (gotBeers) in
+        WebRequests.getBeers { (gotBeers) in
             gotBeers.forEach({
                 if !self.beers.contains($0) { self.beers.append($0) }
             })

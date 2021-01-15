@@ -88,6 +88,14 @@ class Beer: Equatable, Codable {
 }
 
 
+extension Beer {
+    func toJSON() -> [String: Any] {
+        return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]
+    }
+}
+
+
+// MARK: ContainerType
 enum ContainerType: String, Codable {
     case bottle = "Botella", can = "Lata", other = "Otro"
 }

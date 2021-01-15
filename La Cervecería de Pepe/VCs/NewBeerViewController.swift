@@ -69,6 +69,58 @@ class NewBeerViewController: UIViewController {
         _ = textFieldShouldReturn(textFieldIngestion)
     }
     
+    fileprivate func getBeerFromData() -> Beer? {
+        guard
+            let name = textFieldName.text,
+            let type = textFieldType.text,
+            let manufacturer = textFieldManufacturer.text,
+            let nationality = textFieldNacionality.text,
+            let capacityString = textFieldCapacity.text, let capacity = Int(capacityString),
+            let ingestion = textFieldIngestion.text,
+            let cateNote = textFieldCateNote.text,
+            let ibuString = textFieldIBU.text, let ibu = Int(ibuString),
+            let alcoholString = textFieldAlcohol.text, let alcohol = Float(alcoholString)
+        else {
+            print("Parámetros incompletos")
+            return nil
+        }
+        
+        let id = (name+type).replacingOccurrences(of: " ", with: "")
+        
+        return Beer(id: id,
+                    name: name,
+                    type: ContainerType(rawValue: type)!,
+                    manufacturer: manufacturer,
+                    nationality: nationality,
+                    capacity: capacity,
+                    preferentialIngestion: ingestion,
+                    cateNote: cateNote,
+                    ibu: ibu,
+                    alcohol: alcohol,
+                    imagePath: "")
+    }
+    
+    @IBAction func saveBeer(_ sender: Any) {
+        guard let newBeer = getBeerFromData() else {
+            print("Error al obtener datos")
+            return
+        }
+        
+        if let _ = self.beer {
+            // Se está modificando.
+            WebRequests.editBeer(beer: newBeer) { (success) in
+                print("Resultado: \(success)")
+                self.dismiss(animated: true, completion: nil)
+            }
+        } else {
+            // Nueva.
+            WebRequests.newBeer(beer: newBeer) { (success) in
+                print("Resulado: \(success)")
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
     func makeTextFieldVisible() {
         let kbSize: CGFloat = 336
 
