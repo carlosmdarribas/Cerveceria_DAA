@@ -49,15 +49,15 @@
                             <constraint firstAttribute="bottom" secondItem="Dk5-iA-xCm" secondAttribute="bottom" constant="10" id="rRI-kf-o9M"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hEX-Ae-Whn">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cerve" translatesAutoresizingMaskIntoConstraints="NO" id="hEX-Ae-Whn">
                         <rect key="frame" x="45" y="30" width="152" height="246.5"/>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vM-tc-OPe" customClass="PaddingLabel" customModule="La_Cerveceri_a_de_Pepe" customModuleProvider="target">
-                        <rect key="frame" x="160.5" y="239.5" width="35" height="35"/>
+                        <rect key="frame" x="145" y="228" width="46" height="44"/>
                         <color key="backgroundColor" red="0.99659949540000003" green="0.66590362790000002" blue="0.00021185127840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="0vM-tc-OPe" secondAttribute="height" multiplier="1:1" id="dhh-GA-yLY"/>
-                            <constraint firstAttribute="width" constant="35" id="rxg-af-1Cs"/>
+                            <constraint firstAttribute="width" secondItem="0vM-tc-OPe" secondAttribute="height" multiplier="1:1" constant="2" id="dhh-GA-yLY"/>
+                            <constraint firstAttribute="width" constant="46" id="rxg-af-1Cs"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -87,9 +87,9 @@
                 <constraint firstAttribute="trailing" secondItem="eWx-81-JuL" secondAttribute="trailing" constant="20" id="NbD-Yp-cnF"/>
                 <constraint firstAttribute="bottom" secondItem="eWx-81-JuL" secondAttribute="bottom" constant="20" id="O5A-mr-WCh"/>
                 <constraint firstItem="Dk5-iA-xCm" firstAttribute="top" secondItem="hEX-Ae-Whn" secondAttribute="bottom" constant="7" id="d2m-bC-bKR"/>
-                <constraint firstItem="0vM-tc-OPe" firstAttribute="leading" secondItem="hEX-Ae-Whn" secondAttribute="trailing" constant="-36.5" id="e7G-qU-k7P"/>
+                <constraint firstItem="0vM-tc-OPe" firstAttribute="leading" secondItem="hEX-Ae-Whn" secondAttribute="trailing" constant="-52" id="e7G-qU-k7P"/>
                 <constraint firstItem="hEX-Ae-Whn" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="j02-MJ-EBU"/>
-                <constraint firstItem="0vM-tc-OPe" firstAttribute="top" secondItem="hEX-Ae-Whn" secondAttribute="bottom" constant="-37" id="km1-rW-yRh"/>
+                <constraint firstItem="0vM-tc-OPe" firstAttribute="top" secondItem="hEX-Ae-Whn" secondAttribute="bottom" constant="-48.5" id="km1-rW-yRh"/>
                 <constraint firstItem="hEX-Ae-Whn" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.629167" id="lYb-j8-z6H"/>
                 <constraint firstItem="eWx-81-JuL" firstAttribute="top" secondItem="hEX-Ae-Whn" secondAttribute="bottom" constant="-154" id="mFN-dG-Yzd"/>
             </constraints>
@@ -100,7 +100,7 @@
                 <outlet property="beerNameLabel" destination="wnx-4t-GZ6" id="Pqz-dD-MM4"/>
                 <outlet property="productImageView" destination="hEX-Ae-Whn" id="DJi-4K-V0Q"/>
             </connections>
-            <point key="canvasLocation" x="344.92753623188406" y="144.64285714285714"/>
+            <point key="canvasLocation" x="343.47826086956525" y="144.64285714285714"/>
         </collectionViewCell>
     </objects>
     <designables>
@@ -109,6 +109,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="cerve" width="78" height="150"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

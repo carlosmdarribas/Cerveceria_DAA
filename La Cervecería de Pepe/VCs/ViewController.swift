@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController {
     @IBOutlet weak var sectionSelectorCollection: UICollectionView!
@@ -18,16 +19,33 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.initCVs()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let gotBeers = CMFileManager.getBeersFromFile() {
+            self.beers += gotBeers
+        }
+        
         WebRequests.updateBeers { (gotBeers) in
-            self.beers = gotBeers
+            gotBeers.forEach({
+                if !self.beers.contains($0) { self.beers.append($0) }
+            })
             
-            self.beers.unique().forEach({self.sections.append(Section(title: $0))})
+            self.beers.uniqueTitles().forEach({self.sections.append(Section(title: $0))})
             self.updateBeersInScreen(withManufacturerName: self.sections[0].title)
             self.sections.first?.active = true
             
             [self.beersCollection, self.sectionSelectorCollection].forEach({$0.reloadData()})
         }
-        
+    }
+    
+    func initCVs() {
         self.sectionSelectorCollection.register(UINib.init(nibName: "SectionSellectorCVCell", bundle: nil), forCellWithReuseIdentifier: "sectionCell")
         self.beersCollection.register(UINib.init(nibName: "BeerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "beerCell")
         
@@ -36,7 +54,14 @@ class ViewController: UIViewController {
         }
         
         self.beersCollection.collectionViewLayout = getLayout(size: CGSize(width: self.beersCollection.frame.width/1.5, height: self.beersCollection.frame.height))
-        self.sectionSelectorCollection.reloadData()
+    }
+    
+    @objc func appMovedToBackground() {
+        if CMFileManager.saveToFile(beers: self.beers) {
+            print("Guardado OK")
+        } else {
+            print("Error al guardar")
+        }
     }
     
     func getLayout(size: CGSize) -> UICollectionViewFlowLayout{
@@ -79,10 +104,15 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "beerCell", for: indexPath) as! BeerCollectionViewCell
             
             let currentBeer = shownBeers[indexPath.row]
+            
+            if let url = URL(string: currentBeer.imagePath) {
+                print("URL: \(url.absoluteString)")
+                cell.productImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "cerve"), options: .allowInvalidSSLCertificates, context: nil)
+            }
+            
             cell.alcoholLabel.text = "\(currentBeer.alcohol)º"
             cell.beerNameLabel.text = currentBeer.name
             cell.beerCateLabel.text = currentBeer.cateNote
-            cell.productImageView.image = #imageLiteral(resourceName: "cerve")
             
             return cell
             
@@ -101,6 +131,12 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
          
         case beersCollection:
             print("Vamos")
+            let productVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "productVC") as! ProductViewController
+//            self.show(productVC, sender: self)
+            self.present(productVC, animated: true) {
+                productVC.beer = self.shownBeers[indexPath.row]
+            }
+            
         default: break
         }
     }

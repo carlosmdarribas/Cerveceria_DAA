@@ -7,5 +7,6 @@ target 'La Cervecería de Pepe' do
 
   # Pods for La Cervecería de Pepe
   pod 'Alamofire', '~> 4.7'
+  pod 'SDWebImage', '~> 5.0'
 
 end

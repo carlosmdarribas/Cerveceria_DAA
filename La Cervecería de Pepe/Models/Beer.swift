@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Beer: Codable {
+class Beer: Equatable, Codable {
     var id: String
     var name: String
     var type: ContainerType
@@ -68,6 +68,10 @@ class Beer: Codable {
         ibu = finalIbu
     }
     
+    static func == (lhs: Beer, rhs: Beer) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     internal init(id: String, name: String, type: ContainerType, manufacturer: String, nationality: String, capacity: Int, preferentialIngestion: String, cateNote: String, ibu: Int, alcohol: Float, imagePath: String) {
         self.id = id
         self.name = name
@@ -88,8 +92,12 @@ enum ContainerType: String, Codable {
     case bottle = "Botella", can = "Lata", other = "Otro"
 }
 
+extension ContainerType {
+    static let allItems: [ContainerType] = [.bottle, .can, .other]
+}
+
 extension Array where Element == Beer {
-    func unique() -> [String] {
+    func uniqueTitles() -> [String] {
         var uniqueManufacturers = [String]()
         self.forEach({ if !uniqueManufacturers.contains($0.manufacturer) { uniqueManufacturers.append($0.manufacturer) } })
         

@@ -24,6 +24,8 @@
 		078C4C8425B1C6F9008D078C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C8325B1C6F9008D078C /* ProductViewController.swift */; };
 		078C4C8725B1D16C008D078C /* WebRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C8625B1D16C008D078C /* WebRequests.swift */; };
 		078C4C8E25B1EB88008D078C /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C8D25B1EB88008D078C /* CSVParser.swift */; };
+		07D8819725B217B200E5F9C3 /* CMFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D8819625B217B200E5F9C3 /* CMFileManager.swift */; };
+		07D8819A25B2234300E5F9C3 /* NewBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D8819925B2234200E5F9C3 /* NewBeerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		078C4C8325B1C6F9008D078C /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		078C4C8625B1D16C008D078C /* WebRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequests.swift; sourceTree = "<group>"; };
 		078C4C8D25B1EB88008D078C /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
+		07D8819625B217B200E5F9C3 /* CMFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFileManager.swift; sourceTree = "<group>"; };
+		07D8819925B2234200E5F9C3 /* NewBeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBeerViewController.swift; sourceTree = "<group>"; };
 		E6A64431EE148AB13157E804 /* Pods-La Cervecería de Pepe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cervecería de Pepe.release.xcconfig"; path = "Target Support Files/Pods-La Cervecería de Pepe/Pods-La Cervecería de Pepe.release.xcconfig"; sourceTree = "<group>"; };
 		F2CA08542FD750EE24F4123E /* Pods-La Cervecería de Pepe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cervecería de Pepe.debug.xcconfig"; path = "Target Support Files/Pods-La Cervecería de Pepe/Pods-La Cervecería de Pepe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +89,7 @@
 				072A1FE925B12DCF00A999C2 /* PaddingLabel.swift */,
 				078C4C8625B1D16C008D078C /* WebRequests.swift */,
 				078C4C8D25B1EB88008D078C /* CSVParser.swift */,
+				07D8819625B217B200E5F9C3 /* CMFileManager.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			children = (
 				073C4F7425AE5F6700DDAC5D /* ViewController.swift */,
 				078C4C8325B1C6F9008D078C /* ProductViewController.swift */,
+				07D8819925B2234200E5F9C3 /* NewBeerViewController.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				073C4F7B25AE5F6700DDAC5D /* La_Cerveceri_a_de_Pepe.xcdatamodeld in Sources */,
+				07D8819A25B2234300E5F9C3 /* NewBeerViewController.swift in Sources */,
 				072A1FE525B11DB600A999C2 /* BeerSection.swift in Sources */,
 				078C4C8725B1D16C008D078C /* WebRequests.swift in Sources */,
 				078C4C7E25B19A9D008D078C /* BeerCollectionViewCell.swift in Sources */,
@@ -292,6 +299,7 @@
 				073C4F8A25AE641A00DDAC5D /* Beer.swift in Sources */,
 				072A1FEA25B12DCF00A999C2 /* PaddingLabel.swift in Sources */,
 				073C4F7125AE5F6700DDAC5D /* AppDelegate.swift in Sources */,
+				07D8819725B217B200E5F9C3 /* CMFileManager.swift in Sources */,
 				072A1FDF25B1126D00A999C2 /* SectionSellectorCVCell.swift in Sources */,
 				078C4C8425B1C6F9008D078C /* ProductViewController.swift in Sources */,
 				073C4F7325AE5F6700DDAC5D /* SceneDelegate.swift in Sources */,
