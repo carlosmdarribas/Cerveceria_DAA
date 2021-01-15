@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072A1FDF25B1126D00A999C2 /* SectionSellectorCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A1FDD25B1126D00A999C2 /* SectionSellectorCVCell.swift */; };
+		072A1FE025B1126D00A999C2 /* SectionSellectorCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072A1FDE25B1126D00A999C2 /* SectionSellectorCVCell.xib */; };
+		072A1FE525B11DB600A999C2 /* BeerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A1FE425B11DB600A999C2 /* BeerSection.swift */; };
 		073C4F7125AE5F6700DDAC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C4F7025AE5F6700DDAC5D /* AppDelegate.swift */; };
 		073C4F7325AE5F6700DDAC5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C4F7225AE5F6700DDAC5D /* SceneDelegate.swift */; };
 		073C4F7525AE5F6700DDAC5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C4F7425AE5F6700DDAC5D /* ViewController.swift */; };
@@ -14,9 +17,13 @@
 		073C4F7B25AE5F6700DDAC5D /* La_Cerveceri_a_de_Pepe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 073C4F7925AE5F6700DDAC5D /* La_Cerveceri_a_de_Pepe.xcdatamodeld */; };
 		073C4F7D25AE5F6B00DDAC5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073C4F7C25AE5F6B00DDAC5D /* Assets.xcassets */; };
 		073C4F8025AE5F6B00DDAC5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073C4F7E25AE5F6B00DDAC5D /* LaunchScreen.storyboard */; };
+		073C4F8A25AE641A00DDAC5D /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C4F8925AE641A00DDAC5D /* Beer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		072A1FDD25B1126D00A999C2 /* SectionSellectorCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSellectorCVCell.swift; sourceTree = "<group>"; };
+		072A1FDE25B1126D00A999C2 /* SectionSellectorCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionSellectorCVCell.xib; sourceTree = "<group>"; };
+		072A1FE425B11DB600A999C2 /* BeerSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerSection.swift; sourceTree = "<group>"; };
 		073C4F6D25AE5F6700DDAC5D /* La Cervecería de Pepe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "La Cervecería de Pepe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		073C4F7025AE5F6700DDAC5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		073C4F7225AE5F6700DDAC5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +33,7 @@
 		073C4F7C25AE5F6B00DDAC5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		073C4F7F25AE5F6B00DDAC5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		073C4F8125AE5F6B00DDAC5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073C4F8925AE641A00DDAC5D /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +47,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		072A1FDB25B1105B00A999C2 /* CollectionView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				072A1FE225B1127200A999C2 /* Section Sellector */,
+			);
+			path = "CollectionView Cells";
+			sourceTree = "<group>";
+		};
+		072A1FE225B1127200A999C2 /* Section Sellector */ = {
+			isa = PBXGroup;
+			children = (
+				072A1FDD25B1126D00A999C2 /* SectionSellectorCVCell.swift */,
+				072A1FDE25B1126D00A999C2 /* SectionSellectorCVCell.xib */,
+			);
+			path = "Section Sellector";
+			sourceTree = "<group>";
+		};
+		072A1FE725B1216000A999C2 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
 		073C4F6425AE5F6700DDAC5D = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +90,9 @@
 		073C4F6F25AE5F6700DDAC5D /* La Cervecería de Pepe */ = {
 			isa = PBXGroup;
 			children = (
+				072A1FE725B1216000A999C2 /* Libraries */,
+				072A1FDB25B1105B00A999C2 /* CollectionView Cells */,
+				073C4F8825AE622D00DDAC5D /* Models */,
 				073C4F7025AE5F6700DDAC5D /* AppDelegate.swift */,
 				073C4F7225AE5F6700DDAC5D /* SceneDelegate.swift */,
 				073C4F7425AE5F6700DDAC5D /* ViewController.swift */,
@@ -68,6 +103,15 @@
 				073C4F7925AE5F6700DDAC5D /* La_Cerveceri_a_de_Pepe.xcdatamodeld */,
 			);
 			path = "La Cervecería de Pepe";
+			sourceTree = "<group>";
+		};
+		073C4F8825AE622D00DDAC5D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				073C4F8925AE641A00DDAC5D /* Beer.swift */,
+				072A1FE425B11DB600A999C2 /* BeerSection.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +173,7 @@
 			files = (
 				073C4F8025AE5F6B00DDAC5D /* LaunchScreen.storyboard in Resources */,
 				073C4F7D25AE5F6B00DDAC5D /* Assets.xcassets in Resources */,
+				072A1FE025B1126D00A999C2 /* SectionSellectorCVCell.xib in Resources */,
 				073C4F7825AE5F6700DDAC5D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,8 +186,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				073C4F7B25AE5F6700DDAC5D /* La_Cerveceri_a_de_Pepe.xcdatamodeld in Sources */,
+				072A1FE525B11DB600A999C2 /* BeerSection.swift in Sources */,
 				073C4F7525AE5F6700DDAC5D /* ViewController.swift in Sources */,
+				073C4F8A25AE641A00DDAC5D /* Beer.swift in Sources */,
 				073C4F7125AE5F6700DDAC5D /* AppDelegate.swift in Sources */,
+				072A1FDF25B1126D00A999C2 /* SectionSellectorCVCell.swift in Sources */,
 				073C4F7325AE5F6700DDAC5D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
