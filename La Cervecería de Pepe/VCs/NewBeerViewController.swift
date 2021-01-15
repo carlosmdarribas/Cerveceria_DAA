@@ -103,7 +103,7 @@ extension NewBeerViewController: UITextFieldDelegate {
             pickerView.delegate = self
             
             alert.addAction(UIAlertAction(title: "Done", style: .default) { action in
-                textField.text = ContainerType.allItems[pickerView.selectedRow(inComponent: 0)]
+                textField.text = ContainerType.allItems[pickerView.selectedRow(inComponent: 0)].rawValue
                 
                 _ = self.textFieldShouldReturn(textField)
             })
