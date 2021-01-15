@@ -87,3 +87,12 @@ class Beer: Codable {
 enum ContainerType: String, Codable {
     case bottle = "Botella", can = "Lata", other = "Otro"
 }
+
+extension Array where Element == Beer {
+    func unique() -> [String] {
+        var uniqueManufacturers = [String]()
+        self.forEach({ if !uniqueManufacturers.contains($0.manufacturer) { uniqueManufacturers.append($0.manufacturer) } })
+        
+        return uniqueManufacturers
+    }
+}
