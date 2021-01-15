@@ -6,5 +6,6 @@ target 'La Cervecería de Pepe' do
   use_frameworks!
 
   # Pods for La Cervecería de Pepe
+  pod 'Alamofire', '~> 4.7'
 
 end

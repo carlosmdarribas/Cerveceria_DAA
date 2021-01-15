@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,7 +23,7 @@
 		078C4C7F25B19A9D008D078C /* BeerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078C4C7D25B19A9D008D078C /* BeerCollectionViewCell.xib */; };
 		078C4C8425B1C6F9008D078C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C8325B1C6F9008D078C /* ProductViewController.swift */; };
 		078C4C8725B1D16C008D078C /* WebRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C8625B1D16C008D078C /* WebRequests.swift */; };
-		EC17FC816C7F77BDD75A6DE8 /* Pods_La_Cerveceri_a_de_Pepe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9E893FF2A4ACFEBCA65748 /* Pods_La_Cerveceri_a_de_Pepe.framework */; };
+		078C4C8E25B1EB88008D078C /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C8D25B1EB88008D078C /* CSVParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,9 +45,9 @@
 		078C4C7D25B19A9D008D078C /* BeerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerCollectionViewCell.xib; sourceTree = "<group>"; };
 		078C4C8325B1C6F9008D078C /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		078C4C8625B1D16C008D078C /* WebRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequests.swift; sourceTree = "<group>"; };
-		1A9E893FF2A4ACFEBCA65748 /* Pods_La_Cerveceri_a_de_Pepe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_La_Cerveceri_a_de_Pepe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		315F3442AB80C04CBF2E4FBF /* Pods-La Cervecería de Pepe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cervecería de Pepe.debug.xcconfig"; path = "Target Support Files/Pods-La Cervecería de Pepe/Pods-La Cervecería de Pepe.debug.xcconfig"; sourceTree = "<group>"; };
-		4ED48CFDFFFFB19D9BDD0C7A /* Pods-La Cervecería de Pepe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cervecería de Pepe.release.xcconfig"; path = "Target Support Files/Pods-La Cervecería de Pepe/Pods-La Cervecería de Pepe.release.xcconfig"; sourceTree = "<group>"; };
+		078C4C8D25B1EB88008D078C /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
+		E6A64431EE148AB13157E804 /* Pods-La Cervecería de Pepe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cervecería de Pepe.release.xcconfig"; path = "Target Support Files/Pods-La Cervecería de Pepe/Pods-La Cervecería de Pepe.release.xcconfig"; sourceTree = "<group>"; };
+		F2CA08542FD750EE24F4123E /* Pods-La Cervecería de Pepe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cervecería de Pepe.debug.xcconfig"; path = "Target Support Files/Pods-La Cervecería de Pepe/Pods-La Cervecería de Pepe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC17FC816C7F77BDD75A6DE8 /* Pods_La_Cerveceri_a_de_Pepe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +84,7 @@
 			children = (
 				072A1FE925B12DCF00A999C2 /* PaddingLabel.swift */,
 				078C4C8625B1D16C008D078C /* WebRequests.swift */,
+				078C4C8D25B1EB88008D078C /* CSVParser.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -95,7 +95,7 @@
 				073C4F6F25AE5F6700DDAC5D /* La Cervecería de Pepe */,
 				073C4F6E25AE5F6700DDAC5D /* Products */,
 				E536182144DC1CA715820D30 /* Pods */,
-				F90D4E902D34B4C84FB62FA7 /* Frameworks */,
+				5E618C9BB36D162FE2995F8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,22 +152,20 @@
 			path = VCs;
 			sourceTree = "<group>";
 		};
+		5E618C9BB36D162FE2995F8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E536182144DC1CA715820D30 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				315F3442AB80C04CBF2E4FBF /* Pods-La Cervecería de Pepe.debug.xcconfig */,
-				4ED48CFDFFFFB19D9BDD0C7A /* Pods-La Cervecería de Pepe.release.xcconfig */,
+				F2CA08542FD750EE24F4123E /* Pods-La Cervecería de Pepe.debug.xcconfig */,
+				E6A64431EE148AB13157E804 /* Pods-La Cervecería de Pepe.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		F90D4E902D34B4C84FB62FA7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1A9E893FF2A4ACFEBCA65748 /* Pods_La_Cerveceri_a_de_Pepe.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 073C4F8425AE5F6B00DDAC5D /* Build configuration list for PBXNativeTarget "La Cervecería de Pepe" */;
 			buildPhases = (
-				815F04C506BBCE46F424A5BF /* [CP] Check Pods Manifest.lock */,
+				9850D9841BB33A195ABADF04 /* [CP] Check Pods Manifest.lock */,
 				073C4F6925AE5F6700DDAC5D /* Sources */,
 				073C4F6A25AE5F6700DDAC5D /* Frameworks */,
 				073C4F6B25AE5F6700DDAC5D /* Resources */,
+				7ECD980013879E95A3276CFD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -239,7 +238,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		815F04C506BBCE46F424A5BF /* [CP] Check Pods Manifest.lock */ = {
+		7ECD980013879E95A3276CFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-La Cervecería de Pepe/Pods-La Cervecería de Pepe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-La Cervecería de Pepe/Pods-La Cervecería de Pepe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-La Cervecería de Pepe/Pods-La Cervecería de Pepe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9850D9841BB33A195ABADF04 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,6 +295,7 @@
 				072A1FDF25B1126D00A999C2 /* SectionSellectorCVCell.swift in Sources */,
 				078C4C8425B1C6F9008D078C /* ProductViewController.swift in Sources */,
 				073C4F7325AE5F6700DDAC5D /* SceneDelegate.swift in Sources */,
+				078C4C8E25B1EB88008D078C /* CSVParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +439,7 @@
 		};
 		073C4F8525AE5F6B00DDAC5D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 315F3442AB80C04CBF2E4FBF /* Pods-La Cervecería de Pepe.debug.xcconfig */;
+			baseConfigurationReference = F2CA08542FD750EE24F4123E /* Pods-La Cervecería de Pepe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,7 +460,7 @@
 		};
 		073C4F8625AE5F6B00DDAC5D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4ED48CFDFFFFB19D9BDD0C7A /* Pods-La Cervecería de Pepe.release.xcconfig */;
+			baseConfigurationReference = E6A64431EE148AB13157E804 /* Pods-La Cervecería de Pepe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
