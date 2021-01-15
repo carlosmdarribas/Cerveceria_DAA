@@ -30,6 +30,8 @@ class ProductViewController: UIViewController {
         if let beer = beer {
             fillView(beer: beer)
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(modifiedBeer(notification:)), name: NSNotification.Name(rawValue: "EditedBeer"), object: nil)
     }
     
     func fillView(beer: Beer) {
@@ -48,10 +50,20 @@ class ProductViewController: UIViewController {
         self.ibuLabel.text = "\(beer.ibu)"
     }
     
+    @objc func modifiedBeer(notification: NSNotification) {
+        guard let beer = notification.object as? Beer, beer.id == self.beer.id else {
+            return
+        }
+        
+        self.fillView(beer: beer)
+    }
+    
     @IBAction func removeBeer(_ sender: Any) {
         WebRequests.deleteBeer(beer: self.beer) { (success) in
             // TODO: Poner alerta.
             // TODO: Poner notificación.
+            
+            self.dismiss(animated: true, completion: nil)
         }
     }
     

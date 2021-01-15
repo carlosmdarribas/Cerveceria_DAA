@@ -22,11 +22,19 @@ class ViewController: UIViewController {
         self.initCVs()
         
         NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
-
+        NotificationCenter.default.addObserver(self, selector: #selector(modifiedBeer(notification:)), name: NSNotification.Name(rawValue: "EditedBeer"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(modifiedBeer(notification:)), name: NSNotification.Name(rawValue: "EditedBeer"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        reloadBeers()
+    }
+    
+    func reloadBeers() {
+        self.beers.removeAll()
+        self.sections.removeAll()
         
         if let gotBeers = CMFileManager.getBeersFromFile() {
             self.beers += gotBeers
@@ -37,7 +45,7 @@ class ViewController: UIViewController {
                 if !self.beers.contains($0) { self.beers.append($0) }
             })
             
-            self.beers.uniqueTitles().forEach({self.sections.append(Section(title: $0))})
+            self.beers.uniqueManufacturers().forEach({self.sections.append(Section(title: $0))})
             self.updateBeersInScreen(withManufacturerName: self.sections[0].title)
             self.sections.first?.active = true
             
@@ -62,6 +70,28 @@ class ViewController: UIViewController {
         } else {
             print("Error al guardar")
         }
+    }
+    
+    @objc func modifiedBeer(notification: NSNotification) {
+        guard let beer = notification.object as? Beer else {
+            return
+        }
+        
+        self.beers[self.beers.firstIndex(of: beer)!] = beer
+        
+        appMovedToBackground()
+        reloadBeers()
+    }
+    
+    @objc func newBeer(notification: NSNotification) {
+        guard let beer = notification.object as? Beer else {
+            return
+        }
+        
+        self.beers.append(beer)
+        
+        appMovedToBackground()
+        reloadBeers()
     }
     
     func getLayout(size: CGSize) -> UICollectionViewFlowLayout{

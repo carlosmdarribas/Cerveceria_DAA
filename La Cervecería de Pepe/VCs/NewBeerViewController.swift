@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ImagePicker
 
 class NewBeerViewController: UIViewController {
     @IBOutlet weak var textFieldName: UITextField!
@@ -19,9 +20,12 @@ class NewBeerViewController: UIViewController {
     @IBOutlet weak var textFieldAlcohol: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var selectImageButton: UIButton!
     var beer: Beer?
-    
     let datePicker = UIDatePicker()
+    
+    fileprivate var imagePickerController: ImagePickerController!
+    fileprivate var selectedImage: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +62,8 @@ class NewBeerViewController: UIViewController {
         textFieldCateNote.text = beer.cateNote
         textFieldIBU.text = "\(beer.ibu)"
         textFieldAlcohol.text = "\(beer.alcohol)"
+        
+        selectImageButton.isHidden = true
     }
     
     @objc func dateSelected() {
@@ -67,6 +73,19 @@ class NewBeerViewController: UIViewController {
         view.endEditing(true)
         
         _ = textFieldShouldReturn(textFieldIngestion)
+    }
+    
+    
+    @IBAction func addPicture(_ sender: Any) {
+        let configuration = Configuration()
+        configuration.doneButtonTitle = "Finalizar"
+        configuration.noImagesTitle = "No has selccionado imagenes"
+        configuration.recordLocation = false
+        
+        imagePickerController = ImagePickerController(configuration: configuration)
+        imagePickerController.imageLimit = 1
+        imagePickerController.delegate = self
+        present(imagePickerController!, animated: true, completion: nil)
     }
     
     fileprivate func getBeerFromData() -> Beer? {
@@ -79,13 +98,17 @@ class NewBeerViewController: UIViewController {
             let ingestion = textFieldIngestion.text,
             let cateNote = textFieldCateNote.text,
             let ibuString = textFieldIBU.text, let ibu = Int(ibuString),
-            let alcoholString = textFieldAlcohol.text, let alcohol = Float(alcoholString)
+            let alcoholString = textFieldAlcohol.text, let alcohol = Float(alcoholString),
+            let selectedImage = selectedImage, let png = selectedImage.pngData()
         else {
             print("Parámetros incompletos")
             return nil
         }
         
-        let id = (name+type).replacingOccurrences(of: " ", with: "")
+        var id = (name+type).replacingOccurrences(of: " ", with: "")
+        if let beer = self.beer {
+            id = beer.id
+        }
         
         return Beer(id: id,
                     name: name,
@@ -97,7 +120,7 @@ class NewBeerViewController: UIViewController {
                     cateNote: cateNote,
                     ibu: ibu,
                     alcohol: alcohol,
-                    imagePath: "")
+                    imagePath: png.base64EncodedString())
     }
     
     @IBAction func saveBeer(_ sender: Any) {
@@ -110,12 +133,17 @@ class NewBeerViewController: UIViewController {
             // Se está modificando.
             WebRequests.editBeer(beer: newBeer) { (success) in
                 print("Resultado: \(success)")
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "EditedBeer"), object: newBeer)
+                
                 self.dismiss(animated: true, completion: nil)
             }
         } else {
             // Nueva.
             WebRequests.newBeer(beer: newBeer) { (success) in
                 print("Resulado: \(success)")
+
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NewBeer"), object: newBeer)
                 self.dismiss(animated: true, completion: nil)
             }
         }
@@ -145,6 +173,22 @@ class NewBeerViewController: UIViewController {
         scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
 }
+
+extension NewBeerViewController: ImagePickerDelegate {
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {}
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        guard images.count == 1 else { return }
+        self.selectedImage = images[0]
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        self.imagePickerController!.dismiss(animated: true, completion: nil)
+    }
+}
+
 
 extension NewBeerViewController: UITextFieldDelegate {
     

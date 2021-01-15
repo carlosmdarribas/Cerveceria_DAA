@@ -97,6 +97,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                         <state key="normal" title="Nueva Cerveza"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="3lQ-7X-UFQ" kind="show" identifier="newBeer" id="oUD-ve-oX2"/>
                                         </connections>
@@ -731,6 +736,9 @@
                                                     <constraint firstAttribute="height" constant="40" id="hpE-kH-adr"/>
                                                 </constraints>
                                                 <state key="normal" title="Seleccionar imagen"/>
+                                                <connections>
+                                                    <action selector="addPicture:" destination="3lQ-7X-UFQ" eventType="touchUpInside" id="PQI-wc-0cj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ia-zZ-Lv8">
                                                 <rect key="frame" x="30" y="869.5" width="315" height="40"/>
@@ -812,6 +820,7 @@
                     <size key="freeformSize" width="375" height="950"/>
                     <connections>
                         <outlet property="scrollView" destination="Ea2-sr-Ru4" id="1wi-xO-Jow"/>
+                        <outlet property="selectImageButton" destination="gKi-Wj-w0j" id="bov-Pb-uuJ"/>
                         <outlet property="textFieldAlcohol" destination="JID-Sv-jQz" id="R0e-Pw-pR1"/>
                         <outlet property="textFieldCapacity" destination="4Fy-Pa-GBV" id="QWi-7F-1Gr"/>
                         <outlet property="textFieldCateNote" destination="TBq-dM-fLL" id="gyi-n2-mxq"/>

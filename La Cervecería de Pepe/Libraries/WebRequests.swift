@@ -64,7 +64,7 @@ class WebRequests {
             let codeError = response.response?.statusCode
             print(codeError)
             
-            completion(codeError == 200 || codeError == 404)
+            completion(codeError == 200)
         }
     }
     
@@ -73,9 +73,8 @@ class WebRequests {
                 
         Alamofire.request(url, method: .post, parameters: beer.toJSON(), encoding: JSONEncoding.default).response { (response) in
             let codeError = response.response?.statusCode
-            print(codeError)
             
-            completion(codeError == 200 || codeError == 404)
+            completion(codeError == 200)
         }
     }
     

@@ -105,9 +105,12 @@ extension ContainerType {
 }
 
 extension Array where Element == Beer {
-    func uniqueTitles() -> [String] {
+    func uniqueManufacturers() -> [String] {
         var uniqueManufacturers = [String]()
-        self.forEach({ if !uniqueManufacturers.contains($0.manufacturer) { uniqueManufacturers.append($0.manufacturer) } })
+        self.forEach({
+                        if !uniqueManufacturers.contains($0.manufacturer) {
+                            uniqueManufacturers.append($0.manufacturer)
+                        } })
         
         return uniqueManufacturers
     }
