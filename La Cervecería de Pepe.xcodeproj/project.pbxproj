@@ -13,7 +13,7 @@
 		072A1FEA25B12DCF00A999C2 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072A1FE925B12DCF00A999C2 /* PaddingLabel.swift */; };
 		073C4F7125AE5F6700DDAC5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C4F7025AE5F6700DDAC5D /* AppDelegate.swift */; };
 		073C4F7325AE5F6700DDAC5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C4F7225AE5F6700DDAC5D /* SceneDelegate.swift */; };
-		073C4F7525AE5F6700DDAC5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C4F7425AE5F6700DDAC5D /* ViewController.swift */; };
+		073C4F7525AE5F6700DDAC5D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C4F7425AE5F6700DDAC5D /* MainViewController.swift */; };
 		073C4F7825AE5F6700DDAC5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073C4F7625AE5F6700DDAC5D /* Main.storyboard */; };
 		073C4F7B25AE5F6700DDAC5D /* La_Cerveceri_a_de_Pepe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 073C4F7925AE5F6700DDAC5D /* La_Cerveceri_a_de_Pepe.xcdatamodeld */; };
 		073C4F7D25AE5F6B00DDAC5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073C4F7C25AE5F6B00DDAC5D /* Assets.xcassets */; };
@@ -26,6 +26,23 @@
 		078C4C8E25B1EB88008D078C /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C4C8D25B1EB88008D078C /* CSVParser.swift */; };
 		07D8819725B217B200E5F9C3 /* CMFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D8819625B217B200E5F9C3 /* CMFileManager.swift */; };
 		07D8819A25B2234300E5F9C3 /* NewBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D8819925B2234200E5F9C3 /* NewBeerViewController.swift */; };
+		07D881A625B23F3600E5F9C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881A525B23F3600E5F9C3 /* ViewController.swift */; };
+		07D881EE25B23FF500E5F9C3 /* VirtualObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881D725B23FF500E5F9C3 /* VirtualObjectInteraction.swift */; };
+		07D881EF25B23FF500E5F9C3 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D881D925B23FF500E5F9C3 /* Models.scnassets */; };
+		07D881F025B23FF500E5F9C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D881DA25B23FF500E5F9C3 /* Assets.xcassets */; };
+		07D881F125B23FF500E5F9C3 /* VirtualObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881DC25B23FF500E5F9C3 /* VirtualObjectSelection.swift */; };
+		07D881F225B23FF500E5F9C3 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881DD25B23FF500E5F9C3 /* StatusViewController.swift */; };
+		07D881F325B23FF500E5F9C3 /* VirtualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881DF25B23FF500E5F9C3 /* VirtualObjectLoader.swift */; };
+		07D881F425B23FF500E5F9C3 /* VirtualObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881E025B23FF500E5F9C3 /* VirtualObject.swift */; };
+		07D881F525B23FF500E5F9C3 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881E125B23FF500E5F9C3 /* ThresholdPanGesture.swift */; };
+		07D881F625B23FF500E5F9C3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881E325B23FF500E5F9C3 /* Utilities.swift */; };
+		07D881F725B23FF500E5F9C3 /* ViewController+CoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881E425B23FF500E5F9C3 /* ViewController+CoachingOverlay.swift */; };
+		07D881F825B23FF500E5F9C3 /* ViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881E525B23FF500E5F9C3 /* ViewController+Actions.swift */; };
+		07D881F925B23FF500E5F9C3 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881E625B23FF500E5F9C3 /* ViewController+ARSCNViewDelegate.swift */; };
+		07D881FA25B23FF500E5F9C3 /* VirtualObjectARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881E725B23FF500E5F9C3 /* VirtualObjectARView.swift */; };
+		07D881FB25B23FF500E5F9C3 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881E925B23FF500E5F9C3 /* FocusSquareSegment.swift */; };
+		07D881FC25B23FF500E5F9C3 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881EA25B23FF500E5F9C3 /* FocusSquare.swift */; };
+		07D881FE25B23FF500E5F9C3 /* ViewController+ObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D881EC25B23FF500E5F9C3 /* ViewController+ObjectSelection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +53,7 @@
 		073C4F6D25AE5F6700DDAC5D /* La Cervecería de Pepe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "La Cervecería de Pepe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		073C4F7025AE5F6700DDAC5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		073C4F7225AE5F6700DDAC5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		073C4F7425AE5F6700DDAC5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		073C4F7425AE5F6700DDAC5D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		073C4F7725AE5F6700DDAC5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		073C4F7A25AE5F6700DDAC5D /* La_Cerveceri_a_de_Pepe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = La_Cerveceri_a_de_Pepe.xcdatamodel; sourceTree = "<group>"; };
 		073C4F7C25AE5F6B00DDAC5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +67,23 @@
 		078C4C8D25B1EB88008D078C /* CSVParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVParser.swift; sourceTree = "<group>"; };
 		07D8819625B217B200E5F9C3 /* CMFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMFileManager.swift; sourceTree = "<group>"; };
 		07D8819925B2234200E5F9C3 /* NewBeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBeerViewController.swift; sourceTree = "<group>"; };
+		07D881A525B23F3600E5F9C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		07D881D725B23FF500E5F9C3 /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
+		07D881D925B23FF500E5F9C3 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+		07D881DA25B23FF500E5F9C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		07D881DC25B23FF500E5F9C3 /* VirtualObjectSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectSelection.swift; sourceTree = "<group>"; };
+		07D881DD25B23FF500E5F9C3 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		07D881DF25B23FF500E5F9C3 /* VirtualObjectLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectLoader.swift; sourceTree = "<group>"; };
+		07D881E025B23FF500E5F9C3 /* VirtualObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObject.swift; sourceTree = "<group>"; };
+		07D881E125B23FF500E5F9C3 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
+		07D881E325B23FF500E5F9C3 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		07D881E425B23FF500E5F9C3 /* ViewController+CoachingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+CoachingOverlay.swift"; sourceTree = "<group>"; };
+		07D881E525B23FF500E5F9C3 /* ViewController+Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Actions.swift"; sourceTree = "<group>"; };
+		07D881E625B23FF500E5F9C3 /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		07D881E725B23FF500E5F9C3 /* VirtualObjectARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectARView.swift; sourceTree = "<group>"; };
+		07D881E925B23FF500E5F9C3 /* FocusSquareSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
+		07D881EA25B23FF500E5F9C3 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
+		07D881EC25B23FF500E5F9C3 /* ViewController+ObjectSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ObjectSelection.swift"; sourceTree = "<group>"; };
 		E6A64431EE148AB13157E804 /* Pods-La Cervecería de Pepe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cervecería de Pepe.release.xcconfig"; path = "Target Support Files/Pods-La Cervecería de Pepe/Pods-La Cervecería de Pepe.release.xcconfig"; sourceTree = "<group>"; };
 		F2CA08542FD750EE24F4123E /* Pods-La Cervecería de Pepe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-La Cervecería de Pepe.debug.xcconfig"; path = "Target Support Files/Pods-La Cervecería de Pepe/Pods-La Cervecería de Pepe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +149,7 @@
 		073C4F6F25AE5F6700DDAC5D /* La Cervecería de Pepe */ = {
 			isa = PBXGroup;
 			children = (
+				07D881D525B23FF500E5F9C3 /* AR */,
 				072A1FE725B1216000A999C2 /* Libraries */,
 				072A1FDB25B1105B00A999C2 /* CollectionView Cells */,
 				073C4F8825AE622D00DDAC5D /* Models */,
@@ -151,11 +186,75 @@
 		078C4C8125B1C6DD008D078C /* VCs */ = {
 			isa = PBXGroup;
 			children = (
-				073C4F7425AE5F6700DDAC5D /* ViewController.swift */,
+				073C4F7425AE5F6700DDAC5D /* MainViewController.swift */,
 				078C4C8325B1C6F9008D078C /* ProductViewController.swift */,
 				07D8819925B2234200E5F9C3 /* NewBeerViewController.swift */,
+				07D881A525B23F3600E5F9C3 /* ViewController.swift */,
 			);
 			path = VCs;
+			sourceTree = "<group>";
+		};
+		07D881D525B23FF500E5F9C3 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				07D881D725B23FF500E5F9C3 /* VirtualObjectInteraction.swift */,
+				07D881D825B23FF500E5F9C3 /* Resources */,
+				07D881DB25B23FF500E5F9C3 /* Additional View Controllers */,
+				07D881DE25B23FF500E5F9C3 /* Virtual Objects */,
+				07D881E125B23FF500E5F9C3 /* ThresholdPanGesture.swift */,
+				07D881E225B23FF500E5F9C3 /* Utilities */,
+				07D881E425B23FF500E5F9C3 /* ViewController+CoachingOverlay.swift */,
+				07D881E525B23FF500E5F9C3 /* ViewController+Actions.swift */,
+				07D881E625B23FF500E5F9C3 /* ViewController+ARSCNViewDelegate.swift */,
+				07D881E725B23FF500E5F9C3 /* VirtualObjectARView.swift */,
+				07D881E825B23FF500E5F9C3 /* Focus Square */,
+				07D881EC25B23FF500E5F9C3 /* ViewController+ObjectSelection.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		07D881D825B23FF500E5F9C3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07D881D925B23FF500E5F9C3 /* Models.scnassets */,
+				07D881DA25B23FF500E5F9C3 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		07D881DB25B23FF500E5F9C3 /* Additional View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				07D881DC25B23FF500E5F9C3 /* VirtualObjectSelection.swift */,
+				07D881DD25B23FF500E5F9C3 /* StatusViewController.swift */,
+			);
+			path = "Additional View Controllers";
+			sourceTree = "<group>";
+		};
+		07D881DE25B23FF500E5F9C3 /* Virtual Objects */ = {
+			isa = PBXGroup;
+			children = (
+				07D881DF25B23FF500E5F9C3 /* VirtualObjectLoader.swift */,
+				07D881E025B23FF500E5F9C3 /* VirtualObject.swift */,
+			);
+			path = "Virtual Objects";
+			sourceTree = "<group>";
+		};
+		07D881E225B23FF500E5F9C3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				07D881E325B23FF500E5F9C3 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		07D881E825B23FF500E5F9C3 /* Focus Square */ = {
+			isa = PBXGroup;
+			children = (
+				07D881E925B23FF500E5F9C3 /* FocusSquareSegment.swift */,
+				07D881EA25B23FF500E5F9C3 /* FocusSquare.swift */,
+			);
+			path = "Focus Square";
 			sourceTree = "<group>";
 		};
 		5E618C9BB36D162FE2995F8F /* Frameworks */ = {
@@ -236,6 +335,8 @@
 				073C4F8025AE5F6B00DDAC5D /* LaunchScreen.storyboard in Resources */,
 				078C4C7F25B19A9D008D078C /* BeerCollectionViewCell.xib in Resources */,
 				073C4F7D25AE5F6B00DDAC5D /* Assets.xcassets in Resources */,
+				07D881EF25B23FF500E5F9C3 /* Models.scnassets in Resources */,
+				07D881F025B23FF500E5F9C3 /* Assets.xcassets in Resources */,
 				072A1FE025B1126D00A999C2 /* SectionSellectorCVCell.xib in Resources */,
 				073C4F7825AE5F6700DDAC5D /* Main.storyboard in Resources */,
 			);
@@ -291,19 +392,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				073C4F7B25AE5F6700DDAC5D /* La_Cerveceri_a_de_Pepe.xcdatamodeld in Sources */,
+				07D881F225B23FF500E5F9C3 /* StatusViewController.swift in Sources */,
+				07D881F125B23FF500E5F9C3 /* VirtualObjectSelection.swift in Sources */,
 				07D8819A25B2234300E5F9C3 /* NewBeerViewController.swift in Sources */,
 				072A1FE525B11DB600A999C2 /* BeerSection.swift in Sources */,
+				07D881F425B23FF500E5F9C3 /* VirtualObject.swift in Sources */,
+				07D881FC25B23FF500E5F9C3 /* FocusSquare.swift in Sources */,
+				07D881F925B23FF500E5F9C3 /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				078C4C8725B1D16C008D078C /* WebRequests.swift in Sources */,
+				07D881EE25B23FF500E5F9C3 /* VirtualObjectInteraction.swift in Sources */,
 				078C4C7E25B19A9D008D078C /* BeerCollectionViewCell.swift in Sources */,
-				073C4F7525AE5F6700DDAC5D /* ViewController.swift in Sources */,
+				073C4F7525AE5F6700DDAC5D /* MainViewController.swift in Sources */,
 				073C4F8A25AE641A00DDAC5D /* Beer.swift in Sources */,
 				072A1FEA25B12DCF00A999C2 /* PaddingLabel.swift in Sources */,
+				07D881F625B23FF500E5F9C3 /* Utilities.swift in Sources */,
 				073C4F7125AE5F6700DDAC5D /* AppDelegate.swift in Sources */,
+				07D881FA25B23FF500E5F9C3 /* VirtualObjectARView.swift in Sources */,
+				07D881A625B23F3600E5F9C3 /* ViewController.swift in Sources */,
+				07D881F725B23FF500E5F9C3 /* ViewController+CoachingOverlay.swift in Sources */,
+				07D881FE25B23FF500E5F9C3 /* ViewController+ObjectSelection.swift in Sources */,
 				07D8819725B217B200E5F9C3 /* CMFileManager.swift in Sources */,
+				07D881FB25B23FF500E5F9C3 /* FocusSquareSegment.swift in Sources */,
 				072A1FDF25B1126D00A999C2 /* SectionSellectorCVCell.swift in Sources */,
 				078C4C8425B1C6F9008D078C /* ProductViewController.swift in Sources */,
 				073C4F7325AE5F6700DDAC5D /* SceneDelegate.swift in Sources */,
+				07D881F325B23FF500E5F9C3 /* VirtualObjectLoader.swift in Sources */,
+				07D881F825B23FF500E5F9C3 /* ViewController+Actions.swift in Sources */,
 				078C4C8E25B1EB88008D078C /* CSVParser.swift in Sources */,
+				07D881F525B23FF500E5F9C3 /* ThresholdPanGesture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
