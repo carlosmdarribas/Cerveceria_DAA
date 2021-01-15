@@ -13,7 +13,7 @@ class WebRequests {
     static var cotiServerIP:String = http + "maxus.fis.usal.es/HOTHOUSE/daa/2020beer/"
     static var cotiPicturesPath:String = cotiServerIP + "fotos/"
     
-    static var backServerIP:String = http + "192.168.8.6:5000/beer/v1/beer/"
+    static var backServerIP:String = http + "t24h.es:50013/beer/v1/beer/"
     static var backServerPicturesPath:String = backServerIP + "fotos/"
     
     static func getBeers(completion: @escaping ([Beer]) -> Void) {
