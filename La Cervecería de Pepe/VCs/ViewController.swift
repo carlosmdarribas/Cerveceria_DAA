@@ -78,6 +78,16 @@ class ViewController: UIViewController {
         self.shownBeers = self.beers.filter({$0.manufacturer == name})
         self.beersCollection.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        guard segue.identifier == "showBeer", let beer = sender as? Beer else { return }
+        
+        let newBeerVC = segue.destination as! ProductViewController
+        newBeerVC.beer = beer
+    }
 }
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -130,13 +140,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
                 collectionView.reloadData()
          
         case beersCollection:
-            print("Vamos")
-            let productVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "productVC") as! ProductViewController
-//            self.show(productVC, sender: self)
-            self.present(productVC, animated: true) {
-                productVC.beer = self.shownBeers[indexPath.row]
-            }
-            
+            self.performSegue(withIdentifier: "showBeer", sender: self.shownBeers[indexPath.row])
         default: break
         }
     }

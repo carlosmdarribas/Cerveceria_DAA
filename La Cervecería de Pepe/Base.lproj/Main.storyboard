@@ -98,7 +98,7 @@
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                         <state key="normal" title="Nueva Cerveza"/>
                                         <connections>
-                                            <segue destination="3lQ-7X-UFQ" kind="show" id="oUD-ve-oX2"/>
+                                            <segue destination="3lQ-7X-UFQ" kind="show" identifier="newBeer" id="oUD-ve-oX2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -121,6 +121,7 @@
                     <connections>
                         <outlet property="beersCollection" destination="BTw-JC-eav" id="8UH-VE-YxW"/>
                         <outlet property="sectionSelectorCollection" destination="K84-zE-a1E" id="GXE-dI-j12"/>
+                        <segue destination="bdw-fd-UOl" kind="show" identifier="showBeer" id="8pr-ZG-pht"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5T-OP-Ljk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -132,11 +133,11 @@
             <objects>
                 <viewController storyboardIdentifier="productVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bdw-fd-UOl" customClass="ProductViewController" customModule="La_Cerveceri_a_de_Pepe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ED-Ds-Xk1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Cl-TH-VnI">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1178"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1158"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1g-GF-YZR">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1155"/>
@@ -401,6 +402,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="removeBeer:" destination="bdw-fd-UOl" eventType="touchUpInside" id="wqy-N4-F0l"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgT-ky-JV8">
                                                 <rect key="frame" x="20" y="920" width="374" height="50"/>
@@ -418,6 +422,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="3lQ-7X-UFQ" kind="show" identifier="modifyBeer" id="a14-Bj-IQr"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -502,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyT-n0-0VF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2324.8000000000002" y="308.54572713643182"/>
+            <point key="canvasLocation" x="2392" y="264"/>
         </scene>
         <!--New Beer View Controller-->
         <scene sceneID="l1g-8S-3k3">
@@ -813,6 +820,9 @@
             <point key="canvasLocation" x="1537" y="918"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="a14-Bj-IQr"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cerve" width="78" height="150"/>
         <image name="cross" width="30" height="30"/>

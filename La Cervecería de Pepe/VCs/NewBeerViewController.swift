@@ -19,12 +19,18 @@ class NewBeerViewController: UIViewController {
     @IBOutlet weak var textFieldAlcohol: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var beer: Beer?
+    
     let datePicker = UIDatePicker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if let beer = beer {
+            fillViews(beer: beer)
+        }
         
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
@@ -137,7 +143,7 @@ extension NewBeerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return ContainerType.allItems[row]
+        return ContainerType.allItems[row].rawValue
     }
 
 }

@@ -21,15 +21,15 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var alcoholLabel: UILabel!
     @IBOutlet weak var ibuLabel: UILabel!
     
-    var beer: Beer! {
-        didSet {
-            self.fillView(beer: beer!)
-        }
-    }
+    var beer: Beer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let beer = beer {
+            fillView(beer: beer)
+        }
     }
     
     func fillView(beer: Beer) {
@@ -48,14 +48,19 @@ class ProductViewController: UIViewController {
         self.ibuLabel.text = "\(beer.ibu)"
     }
     
-    /*
+    @IBAction func removeBeer(_ sender: Any) {
+        
+    }
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        guard segue.identifier == "modifyBeer" else { return }
+        
+        let newBeerVC = segue.destination as! NewBeerViewController
+        newBeerVC.beer = self.beer
     }
-    */
 
 }
